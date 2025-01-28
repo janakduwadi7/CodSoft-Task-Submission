@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Manager</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Contact Manager</h1>
+        <!-- Add Contact Button -->
+        <a href="/" class="add-button">Add Contact</a>
+        <!-- Display Contacts -->
+        <h2>All Contacts</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Phone</th>
+                    <th>Email</th>
+                    <th>Address</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for contact in contact_info %}
+                <tr>
+                    <td>{{ contact.id }}</td>
+                    <td>{{ contact.Name }}</td>
+                    <td>{{ contact.Phone }}</td>
+                    <td>{{ contact.Email }}</td>
+                    <td>{{ contact.Address }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
